@@ -15,9 +15,11 @@ using Microsoft.Data.SqlClient;
 using System.Data;
 //using Microsoft.CodeAnalysis.RulesetToEditorconfig;
 using System.Configuration;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ValhallaProyecto.Controllers
 {
+    [Authorize]
     public class CategoriasController : Controller
     {
         private readonly ValhallaDbContext _context;

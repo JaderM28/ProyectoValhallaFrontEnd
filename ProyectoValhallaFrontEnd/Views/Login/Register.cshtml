@@ -1,7 +1,7 @@
-﻿@model ProyectoValhallaFrontEnd.Models.Credenciales
+﻿@model ProyectoValhallaFrontEnd.Models.UsuarioDTO
 
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Register";
 }
 
 <div class="bg-gradient bg-primary" style="font-size: 16px">
@@ -14,58 +14,80 @@
 
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-3">
-                        
+
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-block bg-dark">
-                                <div class="text-center">
+                                <div class="text-center " style="padding: 70px 0">
                                     <img src="~/assets/belcomremove.png" alt="" width="250" class="mt-4 mb-3">
                                     <h4 style="font-size: 18px" class="mt-5 text-white">!Bienvenido a BelcomSpa!</h4>
-                                    <h4 style="font-size: 18px" class="text-white">Para reservar tu cita, Inicia sesion</h4>
+                                    <h4 style="font-size: 18px" class="text-white">Registrate para un corte gratis!</h4>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-5" style="font-size: 20px">Iniciar Sesion</h1>
+                                        <h1 class="h4 text-gray-900 mb-5" style="font-size: 20px">Registrarse</h1>
                                     </div>
-                                    
-                                    <form asp-action="Index" asp-controller="Login" method="post">
+
+                                    <form asp-action="Guardar" asp-controller="Usuario" method="post">
                                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                                         <div class="form-group mt-2">
+                                            <label asp-for="Nombres" class="control-label">Escribir Nombres</label>
+                                            <input asp-for="Nombres" class="form-control" required />
+                                            <span asp-validation-for="Nombres" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group mt-2">
+
+                                            <label asp-for="Apellidos" class="control-label">Escribir Apellidos</label>
+                                            <input asp-for="Apellidos" class="form-control" required />
+                                            <span asp-validation-for="Apellidos" class="text-danger"></span>
+
+                                        </div>
+                                        <div class="form-group mt-2">
+
                                             <label asp-for="Username" class="control-label">Nombre de Usuario</label>
                                             <input asp-for="Username" class="form-control" required />
                                             <span asp-validation-for="Username" class="text-danger"></span>
+
                                         </div>
                                         <div class="form-group mt-2">
-                                            
-                                            <label asp-for="CorreoElectronico" class="control-label">Correo ELectronico</label>
+
+                                            <label asp-for="CorreoElectronico" class="control-label">Correo Electronico</label>
                                             <input type="email" asp-for="CorreoElectronico" class="form-control" required />
                                             <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
-                                            
+
                                         </div>
                                         <div class="form-group mt-2">
-                                            
+
+                                            <label asp-for="Telefono" class="control-label">Telefono</label>
+                                            <input asp-for="Telefono" class="form-control" required />
+                                            <span asp-validation-for="Telefono" class="text-danger"></span>
+
+                                        </div>
+                                        <div class="form-group mt-2">
+
                                             <label asp-for="Password" class="control-label">Contraseña</label>
-                                            <input type="password" required asp-for="Password" class="form-control" />
+                                            <input type="password" asp-for="Password" class="form-control" required />
                                             <span asp-validation-for="Password" class="text-danger"></span>
 
                                         </div>
-                                        <div class="form-group d-flex justify-content-between align-items-center">
-                                            <div class="custom-control custom-checkbox mt-3">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Recordarme</label>
-                                            </div>
-                                            <a class="mt-3" href="">¿Has olvidado tu contraseña?</a>
+                                        <div class="form-group mt-2">
+
+                                            <label class="control-label">Confirmar Contraseña</label>
+                                            <input type="password" class="form-control" required />
+                                            <span class="text-danger"></span>
+
                                         </div>
+                                        
 
                                         <div class="form-group text-center mt-5">
                                             <button type="submit" class="btn btn-dark">Continuar</button>
                                         </div>
                                     </form>
                                     <div class="form-group d-flex justify-content-center align-items-center">
-                                        <span class="mt-3 mx-3">¿Eres Nuevo?</span>
-                                        <a class="mt-3" asp-controller="Login" asp-action="Register">¡Crea una cuenta!</a>
+                                        <span class="mt-3 mx-3">¿Ya tienes cuenta?</span>
+                                        <a class="mt-3" asp-action="Index" asp-controller="Login">¡Iniciar Aqui!</a>
                                     </div>
                                 </div>
                             </div>
@@ -75,4 +97,4 @@
             </div>
         </div>
     </div>
-</div> 
+</div>

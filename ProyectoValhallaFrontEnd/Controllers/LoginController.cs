@@ -18,6 +18,13 @@ namespace ProyectoValhallaFrontEnd.Controllers
             return View();
         }
 
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        
+
         [HttpPost]
         public async Task<ActionResult> Index(Credenciales model)
         {
@@ -57,7 +64,7 @@ namespace ProyectoValhallaFrontEnd.Controllers
                         );
                     
 
-                    return RedirectToAction("Index", "Usuario");
+                    return RedirectToAction("Home", "Usuario");
                 }
                 else
                 {

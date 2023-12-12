@@ -14,10 +14,11 @@ using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.Data.SqlClient;
 using System.Data;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace ValhallaProyecto.Controllers
 {
+    [Authorize]
     public class RolesController : Controller
     {
         private readonly ValhallaDbContext _context;

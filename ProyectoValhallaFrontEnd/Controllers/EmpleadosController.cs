@@ -14,9 +14,11 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.Data.SqlClient;
 using System.Data;
 using ProyectoValhallaFrontEnd.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ValhallaProyecto.Controllers
 {
+    [Authorize]
     public class EmpleadosController : Controller
     {
         private readonly ValhallaDbContext _context;

@@ -11,6 +11,12 @@ namespace ProyectoValhallaFrontEnd.Controllers
     [Authorize]
     public class UsuarioController : Controller
     {
+
+
+        public ActionResult Home()
+        {
+            return View();
+        }
         public async Task<IActionResult> Index(string buscar, string filtro, int? pagina)
         {
             int tamañoPagina = 7;

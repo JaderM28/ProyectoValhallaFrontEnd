@@ -3,9 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using ProyectoValhallaFrontEnd.Models;
 using System.Diagnostics;
 using ProyectoValhallaFrontEnd.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ValhallaProyecto.Controllers
 {
+    [Authorize]
     public class DetalleVentasController : Controller
     {
         private readonly ValhallaDbContext _context;
