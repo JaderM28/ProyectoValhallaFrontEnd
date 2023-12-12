@@ -1,0 +1,123 @@
+﻿<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+<script>
+    function enviarFormulario(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Deseas insertar los datos?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Si',
+            cancelButtonText: 'No',
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false,
+            reverseButtons: false,
+            showLoaderOnConfirm: true,
+            preConfirm: () => {
+                return new Promise((resolve) => {             
+                    setTimeout(() => {
+                        resolve();
+                    }, 1000);
+                });
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: '¡Enviado!',
+                    icon: 'success',
+                    text: 'Los datos se han insertado correctamente.'
+                }).then(() => {
+                    setTimeout(() => {
+                        const formulario = document.getElementById('formulario');
+                        formulario.submit();
+                    }, 500);
+                });
+            }
+        });
+    }
+</script>
+<!--Editar-->
+<script>
+    function editarFormulario(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Deseas editar los datos?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Si',
+            cancelButtonText: 'No',
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false,
+            reverseButtons: false,
+            showLoaderOnConfirm: true,
+            preConfirm: () => {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve();
+                    }, 1000);
+                });
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: '¡Editado!',
+                    icon: 'success',
+                    text: 'Los datos se han editado correctamente.'
+                }).then(() => {
+                    setTimeout(() => {
+                        const formulario = document.getElementById('formulario');
+                        formulario.submit();
+                    }, 500);
+                });
+            }
+        });
+    }
+</script>
+<!--Eliminar-->
+<script>
+    function eliminarFormulario(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Esta seguro de eliminar ?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Si',
+            cancelButtonText: 'No',
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false,
+            reverseButtons: false,
+            showLoaderOnConfirm: true,
+            preConfirm: () => {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve();
+                    }, 1000);
+                });
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: '¡Eliminado!',
+                    icon: 'success',
+                    text: 'Se ha eliminado correctamente.'
+                }).then(() => {
+                    setTimeout(() => {
+                        const formulario = document.getElementById('formulario');
+                        formulario.submit();
+                    }, 500);
+                });
+            }
+        });
+    }
+</script>
+

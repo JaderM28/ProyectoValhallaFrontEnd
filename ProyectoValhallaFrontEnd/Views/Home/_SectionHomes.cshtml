@@ -1,0 +1,45 @@
+﻿
+@model InformacionPersonal;
+
+<section class="home" id="home">
+    <picture class="container_image-home" data-aos="zoom-in">
+        <img class="image_home" src="assets/SeccionHome.png" alt="Img-Principal" />
+    </picture>
+    <div class="home_info">
+        <div class="container_text-info">
+            <p class="home_text-1" data-section="home" data_value="home_text-1">Hola, Bienvenido!</p>
+            <p class="home_text-2">@Model.Nombre</p>
+        </div>
+        <div>
+            <p class="home_text-3 text-type" data-section="home" data-value="home_text-3">@Model.Estudio</p>
+        </div>
+
+        <div class="container_parrafo-info">
+            <p data-section="home" data-value="parrafo-info">En BelcomSpa, fusionamos la maestría de la barbería y la creatividad de la peluquería para ofrecerte más que un simple servicio de belleza: una experiencia rejuvenecedora. Nuestro equipo experto de estilistas y barberos está dedicado a perfeccionar tu imagen mientras disfrutas de un ambiente acogedor y moderno. Descubre el equilibrio perfecto entre estilo y bienestar en BelcomSpa, donde cada visita es un viaje hacia la autenticidad y la elegancia.</p>
+        </div>
+
+        <div class="container_button">
+            <a href="@Model.URL" target="_blank">
+                <button class="cv_button" data-section="home" data-value="cv_button">Instagram</button>
+            </a>
+            <a href="#contacto">
+                <button class="contact_button" data-section="home" data-value="contact_button">Contacto</button>
+            </a>
+            
+        </div>
+    </div>
+    <div class="links">
+        <a href="" target="_blank">
+            <img src="assets/icon-linkedin.png" alt="Linkedin" class="icon-linkedin" />
+        </a>
+        <a href="" target="_blank">
+            <img src="assets/icon-github.png" alt="GitHUB" class="icon-github" />
+        </a>
+        <a href="" target="_blank">
+            <img src="assets/icon-codepen.png" alt="CodePen" class="icon-CodePen" />
+        </a>
+        <a href="" target="_blank">
+            <img src="assets/icon-instagram.png" alt="Instagram" class="icon-instagram" />
+        </a>
+    </div>
+</section>

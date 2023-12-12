@@ -1,0 +1,78 @@
+﻿
+<!DOCTYPE html>
+<html lang="en-es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PortafolioPersonal</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+        <!--  Sweet alerte y jquery  AGB-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!--   Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,800;1,200&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/e983763c8c.js" crossorigin="anonymous"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="~/css/loader.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+
+
+</head>
+<body style="font-size: 16px">
+    <header class="header-panel">
+
+        <div class="perfil-panel">
+            <img src="@Url.Content("~/assets/Logo.jpeg")" alt="img-logo" width="180px">
+            <h1>Belcom Spa</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a class="a" asp-area="" asp-controller="Usuario" asp-action="Index"><i class="fa-solid fa-user"></i>Usuarios</a></li>
+                <li><a class="a" asp-area="" asp-controller="Clientes" asp-action="Index"><i class="fa-solid fa-user"></i>Clientes</a></li>
+                <li><a class="a" asp-area="" asp-controller="Roles" asp-action="Index"><i class="fas fa-user-tag"></i>Roles</a></li>
+                <li><a class="a" asp-area="" asp-controller="Empleados" asp-action="Index"><i class="fa-solid fa-user"></i>Empleados</a></li>
+                <li><a class="a" asp-area="" asp-controller="Categorias" asp-action="Index"><i class="fas fa-tags"></i>Categorias</a></li>
+                <li><a class="a" asp-area="" asp-controller="Servicios" asp-action="Index"><i class="fas fa-cut"></i>Servicios</a></li>
+                <li><a class="a" asp-area="" asp-controller="DetalleVentas" asp-action="Index"><i class="fab fa-sellcast"></i>Ventas</a></li>
+                <li><a class="a" asp-area="" asp-controller="Login" asp-action="CerrarSesion"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a></li>
+                @* <li><a href="#contacto" class="a"><i class="fa-solid fa-envelope"></i> Contacto </a></li> *@
+            </ul>
+        </nav>
+
+
+        <div class="footer-panel">
+            <p>&copy; Copyright 2023 <br> Designed By <a href="#" target="_blank">Valhalla</a></p>
+        </div>
+
+    </header>
+
+    <main class="main-panel" role="main">
+        <section id="inicio">
+            @RenderBody()
+        </section>
+    </main>
+
+    <script src="./js/script.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+

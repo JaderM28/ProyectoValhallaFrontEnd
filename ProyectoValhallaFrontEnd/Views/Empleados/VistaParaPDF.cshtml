@@ -1,0 +1,124 @@
+﻿@model IEnumerable<ProyectoValhallaFrontEnd.Models.Empleado>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PdfGenerator</title>
+    <style>
+        h1 {
+            color: black;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid gray;
+            padding: 5px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #343a40;
+            color: white;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(52, 58, 64, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <br />
+        <br />
+        <h1>Lista de Empleados</h1>
+        @if (Model != null)
+        {
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Nombres
+                        </th>
+                        <th>
+                            Apellidos
+                        </th>
+                        <th>
+                            Telefono
+                        </th>
+                        <th>
+                            TipoDocumento
+                        </th>
+                        <th>
+                            .NumeroDocumento
+                        </th>
+                        <th>
+                            Direccion
+                        </th>
+                        <th>
+                            Genero
+                        </th>
+                        <th>
+                            FechaNacimiento
+                        </th>
+                        <th>
+                            IdServicioNavigation
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombres)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Apellidos)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Telefono)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TipoDocumento)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NumeroDocumento)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Direccion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Genero)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IdServicioNavigation.IdServicio)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            }else
+            {
+                <p>No hay datos disponibles.</p>
+            }
+
+        </center>
+</body>
+</html>

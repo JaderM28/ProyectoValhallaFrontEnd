@@ -1,0 +1,100 @@
+﻿@model IEnumerable<ProyectoValhallaFrontEnd.Models.Servicio>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PdfGenerator</title>
+    <style>
+        h1 {
+            color: black;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid gray;
+            padding: 5px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #343a40;
+            color: white;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(52, 58, 64, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <br />
+        <br />
+        <h1>Lista de Servicios</h1>
+        @if (Model != null)
+        {
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Precio
+                        </th>
+                        <th>
+                            DuracionAproximada
+                        </th>
+                        <th>
+                            Descripcion
+                        </th>
+                        <th>
+                            IdCategoriaNavigation
+                        </th>       
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Precio)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DuracionAproximada)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IdCategoriaNavigation.IdCategoria)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+        </table>
+        }
+        else
+        {
+            <p>No hay datos disponibles.</p>
+        }
+    </center>
+</body>
+</html>

@@ -1,0 +1,81 @@
+﻿@model ProyectoValhallaFrontEnd.Models.HomeIndex;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container--loader">
+    <div class="loader"></div>
+</div>
+
+<header class="header">
+    <img src="./assets/Logo.jpeg" alt="Logo BelcomSpa" class="logo__header">
+
+    <nav class="nav_menu not-active">
+        <a href="#home" class="active">Inicio</a>
+        <a href="#sobreMi" data-section="menu" data-value="item2">Nosotros</a>
+        <a href="#habilidades" data-section="menu" data-value="item3">Servicios</a>
+        <a href="#formacion" data-section="menu" data-value="item4">Galeria</a>
+        <a href="#contacto" data-section="menu" data-value="item6">Contacto</a>
+        <a asp-area="" asp-area="" asp-controller="Login" asp-action="Index" data-section="menu" data-value="item5">Login</a>
+
+        <!-- Idiomas de la página -->
+        @* <div id="flags" class="flags">
+            <div class="flags__item" data-language="es">
+                <img src="./assets/icon-spain.png" alt="Español/Spain">
+            </div>
+            <div class="flags__item" data-language="en">
+                <img src="./assets/icon-en.png" alt="Inglés/English">
+            </div>
+        </div> *@
+    </nav>
+
+    <div id="button" class="btn-menu not-active">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<main>
+    <partial name="_SectionHomes" model="Model.DatosPersona" />
+    <partial name="_SectionAbout" />
+    <partial name="_SectionSkills" />
+    <partial name="_SectionFormacion" />
+    <partial name="_SectionContacto" />
+</main>
+
+
+<footer>
+    <div class="contianer--footer">
+        <div class="container_redes-footer">
+            <a href="" target="_blank">
+                <img src="./assets/icon-linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="" target="_blank">
+                <img src="./assets/icon-github.png" alt="GitHub">
+            </a>
+            <a href="" target="_blank">
+                <img src="./assets/icon-codepen.png" alt="CodePen" class="icon_codepen--footer">
+            </a>
+            <a href="" target="_blank">
+                <img src="./assets/icon-instagram.png" alt="Instagram">
+            </a>
+        </div>
+
+        <div class="container_text--footer">
+            <span>Copyright © | By</span>
+            <span></span>
+            <span>Valhalla</span>
+        </div>
+    </div>
+</footer>
+
+<div class="go-top-container">
+    <div class="go-top-button">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+</div>
+
+
+
